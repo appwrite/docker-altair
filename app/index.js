@@ -22,7 +22,7 @@ server.use('/', altairExpress.altairExpress({
 }));
 
 server.listen(3000, function () {
-        console.log('Graphql ide listening on port 3000!');
+        console.log('GraphQL Explorer listening on port 3000!');
         console.log("Endpoint url: " + process.env.SERVER_URL)
     }
 );
