@@ -1,6 +1,6 @@
 {
-  "name": "graphql-browser",
-  "version": "1.0.0",
+  "name": "graphql-explorer",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
