@@ -10,11 +10,13 @@ server.use('/', altairExpress.altairExpress({
         "X-Appwrite-Key" : ""
     },
     endpointURL: process.env.SERVER_URL,
-    initialQuery: `locale_getContinents{
-        sum
-        continents { 
-            name
-          code
+    initialQuery: `query listContinents {
+        locale_getContinents {
+          sum
+          continents { 
+              name
+            code
+          }
         }
       }`
 }));
