@@ -1,7 +1,6 @@
 var express = require('express');
 var altairExpress = require('altair-express-middleware');
 
-
 const server = express();
 
 // Mount your altair GraphQL client
@@ -11,7 +10,13 @@ server.use('/', altairExpress.altairExpress({
         "X-Appwrite-Key" : ""
     },
     endpointURL: process.env.SERVER_URL,
-    initialQuery: `query { hello }`
+    initialQuery: `locale_getContinents{
+        sum
+        continents { 
+            name
+          code
+        }
+      }`
 }));
 
 server.listen(3000, function () {
