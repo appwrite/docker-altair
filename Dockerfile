@@ -9,8 +9,10 @@ RUN npm install
 
 FROM node:current-alpine3.16 as final
 
+WORKDIR app
+
 COPY --from=build /app/node_modules /app/node_modules
-COPY ./app/index.js  /app/index.js
+COPY ./app  /app
 
 EXPOSE 3000
 
