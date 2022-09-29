@@ -1,5 +1,5 @@
 os: linux
-dist: xenial
+dist: focal
 
 language: shell
 
@@ -26,6 +26,6 @@ script:
 deploy:
   - provider: script
     edge: true
-    script: docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7,linux/ppc64le,linux/s390x -t appwrite/altair:$TRAVIS_TAG ./ --push
+    script: docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t appwrite/altair:$TRAVIS_TAG ./ --push
     on:
       tags: true
