@@ -1,4 +1,4 @@
-FROM node:current-alpine3.16 as build
+FROM node:18-alpine3.16 as build
 
 WORKDIR app
 
@@ -7,7 +7,7 @@ COPY ./app/package-lock.json /app/package-lock.json
 
 RUN npm install
 
-FROM node:current-alpine3.16 as final
+FROM node:18-alpine3.16 as final
 
 WORKDIR app
 

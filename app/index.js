@@ -12,13 +12,17 @@ app.use('/', altairExpress({
     },
     initialQuery: `query listContinents {
         localeListContinents {
-          total
-          continents { 
-            name
-            code
-          }
+            total
+            continents { 
+                name
+                code
+            }
         }
-      }`
+    }`,
+    initialSettings: {
+        "alert.disableWarnings": true,
+        "schema.reloadOnStart": true,
+    }
 }));
 
 app.listen(3000, () => {
