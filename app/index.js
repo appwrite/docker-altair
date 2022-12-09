@@ -1,5 +1,5 @@
 const express = require('express');
-const {altairExpress} = require('altair-express-middleware');
+const {altairExpress} = require('@appwrite.io/altair-express-middleware');
 
 const app = express();
 
@@ -8,7 +8,6 @@ app.use('/', altairExpress({
     endpointURL: process.env.SERVER_URL,
     initialHeaders: {
         "X-Appwrite-Project": "",
-        "X-Appwrite-Key" : ""
     },
     initialQuery: `query listContinents {
         localeListContinents {
