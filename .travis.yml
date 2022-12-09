@@ -26,6 +26,6 @@ script:
 deploy:
   - provider: script
     edge: true
-    script: docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t appwrite/altair:$TRAVIS_TAG ./ --push
+    script: docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 --build-arg NPM_TOKEN="${NPM_TOKEN}" -t appwrite/altair:$TRAVIS_TAG ./ --push
     on:
       tags: true
