@@ -22,6 +22,7 @@ app.use('/', altairExpress({
     initialSettings: {
         "alert.disableWarnings": true,
         "schema.reloadOnStart": true,
+        "request.withCredentials": true,
     }
 }));
 
