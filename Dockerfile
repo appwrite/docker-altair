@@ -1,13 +1,17 @@
-FROM node:current-alpine3.16 as build
+FROM node:18-alpine3.16 as build
+
+ARG NPM_TOKEN
+ENV NPM_TOKEN=${NPM_TOKEN}
 
 WORKDIR app
 
+COPY ./app/.npmrc /app/.npmrc
 COPY ./app/package.json /app/package.json
 COPY ./app/package-lock.json /app/package-lock.json
 
 RUN npm install
 
-FROM node:current-alpine3.16 as final
+FROM node:18-alpine3.16 as final
 
 WORKDIR app
 
