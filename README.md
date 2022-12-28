@@ -8,6 +8,8 @@
 
 A Docker image for the very popular GraphQL explorer by [Altair](https://altair.sirmuel.design/) 🕸
 
+![Appwrite GraphQL Explorer](docs/appwrite-graphql-explorer.png)
+
 ## Getting Started
 
 These instructions will cover usage information to help your run Altair docker image
