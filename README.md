@@ -6,32 +6,39 @@
 [![Twitter Account](https://img.shields.io/twitter/follow/appwrite_io?color=00acee&label=twitter&style=flat-square)](https://twitter.com/appwrite_io)
 [![Follow Appwrite on StackShare](https://img.shields.io/badge/follow%20on-stackshare-blue?style=flat-square)](https://stackshare.io/appwrite)
 
-
 A Docker image for the very popular GraphQL explorer by [Altair](https://altair.sirmuel.design/) 🕸
+
+![Appwrite GraphQL Explorer](docs/appwrite-graphql-explorer.png)
 
 ## Getting Started
 
-These instructions will cover usage information to help your run Altair docker image 
+These instructions will cover usage information to help your run Altair docker image
 
 ### Prerequisities
 
 In order to run this image you'll need docker installed.
 
-* [Windows](https://docs.docker.com/windows/started)
-* [OS X](https://docs.docker.com/mac/started/)
-* [Linux](https://docs.docker.com/linux/started/)
+- [Windows](https://docs.docker.com/windows/started)
+- [OS X](https://docs.docker.com/mac/started/)
+- [Linux](https://docs.docker.com/linux/started/)
 
 ### Usage
 
+> **Note**
+> To ensure the GraphQL docs load in the explorer, set the `_APP_OPTIONS_ABUSE` variable to `disabled` in your `.env` file.
+
 ```shell
-docker run appwrite/altair
+APPWRITE_ENDPOINT=http://localhost/v1
+docker run --rm -p "3000:3000" -e "SERVER_URL=$APPWRITE_ENDPOINT/graphql" appwrite/altair
 ```
+
+After starting the container, open your browser and browse to [http://localhost:3000/](http://localhost:3000/).
 
 ### Environment Variables
 
 This image uses the following Environment Variables
-* **SERVER_URL** - Your GraphQL Server URL
 
+- **SERVER_URL** - Your GraphQL Server URL
 
 ### Build / Release
 
@@ -49,9 +56,9 @@ docker buildx build --platform linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
 
 ## Find Us
 
-* [GitHub](https://github.com/appwrite)
-* [Discord](https://appwrite.io/discord)
-* [Twitter](https://twitter.com/appwrite_io)
+- [GitHub](https://github.com/appwrite)
+- [Discord](https://appwrite.io/discord)
+- [Twitter](https://twitter.com/appwrite_io)
 
 ## Copyright and license
 
