@@ -5,8 +5,6 @@ services:
     container_name: graphql-explorer
     build:
       context: .
-      args:
-        - NPM_TOKEN=${NPM_TOKEN}
     restart: unless-stopped
     ports: 
       - '9506:3000'
