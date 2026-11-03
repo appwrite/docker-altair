@@ -1,5 +1,5 @@
 const express = require('express');
-const {altairExpress} = require('@appwrite.io/altair-express-middleware');
+const {altairExpress} = require('altair-express-middleware');
 
 const app = express();
 
